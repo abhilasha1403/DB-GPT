@@ -20,7 +20,8 @@ class DBType(Enum):
     StarRocks = DbInfo("starrocks")
     Spark = DbInfo("spark", True)
     Doris = DbInfo("doris")
-
+    Hive =DbInfo("hive")
+    
     def value(self):
         return self._value_.name
 

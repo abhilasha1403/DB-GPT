@@ -7,6 +7,7 @@ export type DBType =
   | 'mssql'
   | 'clickhouse'
   | 'oracle'
+  | 'hive'
   | 'postgresql'
   | 'db2'
   | 'access'

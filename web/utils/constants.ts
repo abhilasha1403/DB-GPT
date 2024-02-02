@@ -58,6 +58,7 @@ export const dbMapper: Record<DBType, { label: string; icon: string; desc: strin
   redis: { label: 'Redis', icon: '/icons/redis.png', desc: 'Fast, versatile in-memory data structure store as cache, DB, or broker.' },
   cassandra: { label: 'Cassandra', icon: '/icons/cassandra.png', desc: 'Scalable, fault-tolerant distributed NoSQL database for large data.' },
   couchbase: { label: 'Couchbase', icon: '/icons/couchbase.png', desc: 'High-performance NoSQL document database with distributed architecture.' },
+  hive: { label: 'Hive', icon: '/icons/hive.png', desc: 'Hive database' },
   postgresql: {
     label: 'PostgreSQL',
     icon: '/icons/postgresql.png',
@@ -65,4 +66,6 @@ export const dbMapper: Record<DBType, { label: string; icon: string; desc: strin
   },
   spark: { label: 'Spark', icon: '/icons/spark.png', desc: 'Unified engine for large-scale data analytics.' },
   space: { label: 'Space', icon: '/icons/knowledge.png', desc: 'knowledge analytics.' },
+  
+
 };
