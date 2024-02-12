@@ -23,9 +23,14 @@ class HiveConnect(RDBMSDatabase):
         engine_args: Optional[dict] = None,
         **kwargs: Any,
     ) -> RDBMSDatabase:
-        db_url: str = (
-            f'{cls.driver}://{host}:{port}/{db_name}?username={user}&password={pwd}'
+        if(user is None or not user.strip()):
+            db_url: str = (
+            f'{cls.driver}://{host}:{port}/{db_name}'
         )
+        else:
+            db_url: str = (
+                f'{cls.driver}://{host}:{port}/{db_name}?username={user}&password={pwd}'
+            )
         # db_url: str = (
         #     f"hive://localhost:10000/dvdrental"
         # )
