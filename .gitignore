@@ -1,2 +1,4 @@
 /models
 /logs
+/dbgpt/__pycache__
+__pycache__/
