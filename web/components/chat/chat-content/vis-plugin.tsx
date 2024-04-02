@@ -11,7 +11,6 @@ interface IVisPlugin {
     query: string;
   };
   status: 'todo' | 'runing' | 'failed' | 'complete' | (string & {});
-  logo: string | null;
   result: string;
   err_msg: string | null;
 }

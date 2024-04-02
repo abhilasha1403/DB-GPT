@@ -12,7 +12,7 @@ import CompletionInput from '@/components/common/completion-input';
 import { useTranslation } from 'react-i18next';
 import { STORAGE_INIT_MESSAGE_KET } from '@/utils';
 import Icon from '@ant-design/icons/lib/components/Icon';
-import { ColorfulDB, ColorfulPlugin, ColorfulDashboard, ColorfulData, ColorfulExcel, ColorfulDoc, ColorfulChat } from '@/components/icons';
+import { ColorfulDB, ColorfulDashboard, ColorfulData, ColorfulExcel, ColorfulDoc, ColorfulChat } from '@/components/icons';
 import classNames from 'classnames';
 
 const Home: NextPage = () => {
@@ -60,8 +60,6 @@ const Home: NextPage = () => {
         return <Icon className="w-10 h-10 mr-4 p-1" component={ColorfulDB} />;
       case 'chat_dashboard':
         return <Icon className="w-10 h-10 mr-4 p-1" component={ColorfulDashboard} />;
-      case 'chat_agent':
-        return <Icon className="w-10 h-10 mr-4 p-1" component={ColorfulPlugin} />;
       case 'dbgpt_chat':
         return <Icon className="w-10 h-10 mr-4 p-1" component={ColorfulChat} />;
       default:
@@ -72,14 +70,7 @@ const Home: NextPage = () => {
   return (
     <div className="px-4 h-screen flex flex-col justify-center items-center overflow-hidden">
       <div className="max-w-3xl max-h-screen overflow-y-auto">
-        <Image
-          src="/LOGO.png"
-          alt="Revolutionizing Database Interactions with Private LLM Technology"
-          width={856}
-          height={160}
-          className="w-full mt-4"
-          unoptimized
-        />
+       
         <Divider className="!text-[#878c93] !my-6" plain>
           {t('Quick_Start')}
         </Divider>

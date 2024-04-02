@@ -97,7 +97,6 @@ def _initialize_db_storage(param: "WebServerParameters", system_app: SystemApp):
 def _migration_db_storage(param: "WebServerParameters"):
     """Migration the db storage."""
     # Import all models to make sure they are registered with SQLAlchemy.
-    from dbgpt.app.initialization.db_model_initialization import _MODELS
     from dbgpt.configs.model_config import PILOT_PATH
 
     default_meta_data_path = os.path.join(PILOT_PATH, "meta_data")

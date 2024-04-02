@@ -23,12 +23,12 @@ class HiveConnect(RDBMSDatabase):
         engine_args: Optional[dict] = None,
         **kwargs: Any,
     ) -> RDBMSDatabase:
-        db_url: str = (
-            f'{cls.driver}://{host}:{port}/{db_name}?username={user}&password={pwd}'
-        )
         # db_url: str = (
-        #     f"hive://localhost:10000/dvdrental"
+        #     f'{cls.driver}://{host}:{port}/{db_name}?username={user}&password={pwd}'
         # )
+        db_url: str = (
+            f"hive://localhost:10000/dvdrental"
+        )
         return cls.from_uri(db_url, engine_args, **kwargs)
 
   

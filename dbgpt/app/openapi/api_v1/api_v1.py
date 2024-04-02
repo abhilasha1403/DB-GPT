@@ -199,8 +199,7 @@ async def dialogue_scenes():
         ChatScene.ChatWithDbQA,
         ChatScene.ChatExcel,
         ChatScene.ChatKnowledge,
-        ChatScene.ChatDashboard,
-        ChatScene.ChatAgent,
+        ChatScene.ChatDashboard
     ]
     for scene in new_modes:
         scene_vo = ChatSceneVo(
