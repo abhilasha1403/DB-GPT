@@ -4,3 +4,7 @@
 __pycache__/
 __pycache__
 **/__pycache__/
+/dbgpt/agent/__pycache__
+/dbgpt/agent/agents/__pycache__
+/dbgpt/agent/common/__pycache__
+*.pyc 
