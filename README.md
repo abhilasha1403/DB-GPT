@@ -1,13 +1,3 @@
-Project Name: [Your Project Name]
-
-Description:
-[Provide a brief description of your project here. What problem does it solve? What technologies does it use?]
-
-Table of Contents:
-1. Introduction
-2. Installation
-3. Directory Structure
-
 
 1. Introduction:
 Data-domain large model framework. Its purpose is to build the infrastructure for the large model domain by developing a variety of technical capabilities, including multi-model management, Text2SQL performance optimization, RAG framework and optimization. These capabilities aim to simplify and facilitate the construction of large model applications around databases.
