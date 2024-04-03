@@ -8,3 +8,5 @@ __pycache__
 /dbgpt/agent/agents/__pycache__
 /dbgpt/agent/common/__pycache__
 *.pyc 
+/pilot/data
+/pilot/message

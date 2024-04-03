@@ -7,10 +7,10 @@ def _import_pgvector() -> Any:
     return PGVectorStore
 
 
-def _import_milvus() -> Any:
-    from dbgpt.storage.vector_store.milvus_store import MilvusStore
+# def _import_milvus() -> Any:
+#     from dbgpt.storage.vector_store.milvus_store import MilvusStore
 
-    return MilvusStore
+#     return MilvusStore
 
 
 def _import_chroma() -> Any:
@@ -19,23 +19,19 @@ def _import_chroma() -> Any:
     return ChromaStore
 
 
-def _import_weaviate() -> Any:
-    from dbgpt.storage.vector_store.weaviate_store import WeaviateStore
+# def _import_weaviate() -> Any:
+#     from dbgpt.storage.vector_store.weaviate_store import WeaviateStore
 
-    return WeaviateStore
+#     return WeaviateStore
 
 
 def __getattr__(name: str) -> Any:
     if name == "Chroma":
         return _import_chroma()
-    elif name == "Milvus":
-        return _import_milvus()
-    elif name == "Weaviate":
-        return _import_weaviate()
     elif name == "PGVector":
         return _import_pgvector()
     else:
         raise AttributeError(f"Could not find: {name}")
 
 
-__all__ = ["Chroma", "Milvus", "Weaviate", "PGVector"]
+__all__ = ["Chroma", "PGVector"]
