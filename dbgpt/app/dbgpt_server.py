@@ -92,13 +92,10 @@ def mount_routers(app: FastAPI):
     """Lazy import to avoid high time cost"""
     from dbgpt.app.knowledge.api import router as knowledge_router
     from dbgpt.app.openapi.api_v1.api_v1 import router as api_v1
-    from dbgpt.app.openapi.api_v1.editor.api_editor_v1 import (
-        router as api_editor_route_v1,
-    )
+    
     from dbgpt.app.openapi.api_v1.feedback.api_fb_v1 import router as api_fb_v1
 
     app.include_router(api_v1, prefix="/api", tags=["Chat"])
-    app.include_router(api_editor_route_v1, prefix="/api", tags=["Editor"])
     app.include_router(api_fb_v1, prefix="/api", tags=["FeedBack"])
 
     app.include_router(knowledge_router, tags=["Knowledge"])

@@ -43,7 +43,6 @@ def initialize_components(
     )
     _initialize_model_cache(system_app)
     _initialize_awel(system_app, param)
-    _initialize_openapi(system_app)
     # Register serve apps
     register_serve_apps(system_app, CFG)
 
@@ -73,8 +72,3 @@ def _initialize_awel(system_app: SystemApp, param: WebServerParameters):
 
     initialize_awel(system_app, dag_dirs)
 
-
-def _initialize_openapi(system_app: SystemApp):
-    from dbgpt.app.openapi.api_v1.editor.service import EditorService
-
-    system_app.register(EditorService)

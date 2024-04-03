@@ -37,26 +37,13 @@ def server_init(param: "WebServerParameters", system_app: SystemApp):
     # init config
     cfg = Config()
     cfg.SYSTEM_APP = system_app
-    # Initialize db storage first
+    # Initialize db storage first , all the storage used in project like model related info , dbs , knowledge bases , chats , history , error etc
     _initialize_db_storage(param, system_app)
 
     # load_native_plugins(cfg)
     signal.signal(signal.SIGINT, signal_handler)
 
-    # Loader plugins and commands
-    command_categories = [
-        "dbgpt.agent.plugin.commands.built_in.audio_text",
-        "dbgpt.agent.plugin.commands.built_in.image_gen",
-    ]
-    # exclude commands
-    command_categories = [
-        x for x in command_categories if x not in cfg.disabled_command_categories
-    ]
-    command_registry = CommandRegistry()
-    for command_category in command_categories:
-        command_registry.import_commands(command_category)
-
-    cfg.command_registry = command_registry
+    
 
     command_disply_commands = [
         "dbgpt.agent.plugin.commands.built_in.disply_type.show_chart_gen",
