@@ -23,7 +23,7 @@ Data-domain large model framework. Its purpose is to build the infrastructure fo
   - /core :
   - /datasources : for connection with various databases and related methods to read metadata (table , colum and field info)
   - /model :
-  - /serve : Middle service layer
+  - /serve : Middle service layer for interacting with db layer example :- stroring and retrieving chat history from db  or db schema assembler to load metadata of db
   - /rag : contains all the code for generating embeddings , extracting and summarizing , retrieving based similarity search etc , text splitter
   - /storage : vector store connectors and loading and retrieving queries from vector store , metadata storage in sqlite storing all chat history , humand feedback , configurations etc in 
 - /web : UI code in next.js
