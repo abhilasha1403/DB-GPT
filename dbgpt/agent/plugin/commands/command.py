@@ -36,14 +36,10 @@ def execute_ai_response_json(
     Returns:
 
     """
-    from dbgpt.util.speech.say import say_text
 
     cfg = Config()
 
     command_name, arguments = get_command(ai_response)
-
-    if cfg.speak_mode:
-        say_text(f"I want to execute {command_name}")
 
     arguments = _resolve_pathlike_command_args(arguments)
     # Execute command

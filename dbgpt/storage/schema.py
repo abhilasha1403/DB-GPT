@@ -10,16 +10,10 @@ class DbInfo:
 
 class DBType(Enum):
     Mysql = DbInfo("mysql")
-    OCeanBase = DbInfo("oceanbase")
-    DuckDb = DbInfo("duckdb", True)
     SQLite = DbInfo("sqlite", True)
-    Oracle = DbInfo("oracle")
     MSSQL = DbInfo("mssql")
     Postgresql = DbInfo("postgresql")
-    Clickhouse = DbInfo("clickhouse")
-    StarRocks = DbInfo("starrocks")
     Spark = DbInfo("spark", True)
-    Doris = DbInfo("doris")
     Hive =DbInfo("hive")
     
     def value(self):

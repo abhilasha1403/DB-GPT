@@ -2,21 +2,15 @@ export type DBOption = { label: string; value: DBType; disabled?: boolean; isFil
 
 export type DBType =
   | 'mysql'
-  | 'duckdb'
   | 'sqlite'
   | 'mssql'
-  | 'clickhouse'
   | 'oracle'
   | 'hive'
   | 'postgresql'
   | 'db2'
-  | 'access'
   | 'mongodb'
-  | 'starrocks'
   | 'hbase'
   | 'redis'
-  | 'cassandra'
-  | 'couchbase'
   | (string & {});
 
 export type IChatDbSchema = {

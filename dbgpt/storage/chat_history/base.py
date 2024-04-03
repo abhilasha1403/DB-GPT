@@ -11,7 +11,6 @@ class MemoryStoreType(Enum):
     File = "file"
     Memory = "memory"
     DB = "db"
-    DuckDb = "duckdb"
 
 
 class BaseChatHistoryMemory(ABC):

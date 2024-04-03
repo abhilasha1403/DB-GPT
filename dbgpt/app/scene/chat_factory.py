@@ -8,8 +8,6 @@ class ChatFactory(metaclass=Singleton):
     @staticmethod
     def get_implementation(chat_mode, **kwargs):
         # Lazy loading
-        from dbgpt.app.scene.chat_agent.chat import ChatAgent
-        from dbgpt.app.scene.chat_agent.prompt import prompt
         from dbgpt.app.scene.chat_dashboard.chat import ChatDashboard
         from dbgpt.app.scene.chat_dashboard.prompt import prompt
         from dbgpt.app.scene.chat_data.chat_excel.excel_analyze.chat import ChatExcel

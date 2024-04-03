@@ -28,7 +28,6 @@ from dbgpt.datasource.db_conn_info import DBConfig, DbTypeInfo
 from dbgpt.model.base import FlatSupportedModel
 from dbgpt.model.cluster import BaseModelController, WorkerManager, WorkerManagerFactory
 from dbgpt.rag.summary.db_summary_client import DBSummaryClient
-from dbgpt.serve.agent.agents.controller import multi_agents
 from dbgpt.util.executor_utils import (
     DefaultExecutorFactory,
     ExecutorFactory,
@@ -329,23 +328,23 @@ async def chat_completions(dialogue: ConversationVo = Body()):
         "Connection": "keep-alive",
         "Transfer-Encoding": "chunked",
     }
-    if dialogue.chat_mode == ChatScene.ChatAgent.value():
-        return StreamingResponse(
-            multi_agents.app_agent_chat(
-                conv_uid=dialogue.conv_uid,
-                gpts_name=dialogue.select_param,
-                user_query=dialogue.user_input,
-                user_code=dialogue.user_name,
-                sys_code=dialogue.sys_code,
-            ),
-            headers=headers,
-            media_type="text/event-stream",
-        )
-    else:
-        with root_tracer.start_span(
-            "get_chat_instance", span_type=SpanType.CHAT, metadata=dialogue.dict()
-        ):
-            chat: BaseChat = await get_chat_instance(dialogue)
+    # if dialogue.chat_mode == ChatScene.ChatAgent.value():
+    #     return StreamingResponse(
+    #         multi_agents.app_agent_chat(
+    #             conv_uid=dialogue.conv_uid,
+    #             gpts_name=dialogue.select_param,
+    #             user_query=dialogue.user_input,
+    #             user_code=dialogue.user_name,
+    #             sys_code=dialogue.sys_code,
+    #         ),
+    #         headers=headers,
+    #         media_type="text/event-stream",
+    #     )
+    # else:
+    with root_tracer.start_span(
+        "get_chat_instance", span_type=SpanType.CHAT, metadata=dialogue.dict()
+    ):
+        chat: BaseChat = await get_chat_instance(dialogue)
 
         if not chat.prompt_template.stream_out:
             return StreamingResponse(
